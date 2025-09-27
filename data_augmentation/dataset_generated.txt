@@ -1,0 +1,2366 @@
+# 3. Dataset
+texts = [
+    "The app is fantastic",  # Label=2
+    "The app live howling",  # Label=2
+    "The app embody marvellous",  # Label=2
+    "The app is wondrous",  # Label=2
+    "The app is fantastical",  # Label=2
+    "The app constitute marvelous",  # Label=2
+    "The app follow terrific",  # Label=2
+    "The app comprise fantastic",  # Label=2
+    "The app be fantastic",  # Label=2
+    "The app is terrific",  # Label=2
+    "The app be tremendous",  # Label=2
+    "The app is grotesque",  # Label=2
+    "The app represent fantastic",  # Label=2
+    "The app is marvelous",  # Label=2
+    "The app make up grotesque",  # Label=2
+    "The service was excellent",  # Label=2
+    "The table service represent excellent",  # Label=2
+    "The service follow first class",  # Label=2
+    "The armed service was first class",  # Label=2
+    "The avail be excellent",  # Label=2
+    "The divine service be excellent",  # Label=2
+    "The service embody fantabulous",  # Label=2
+    "The service be fantabulous",  # Label=2
+    "The overhaul exist excellent",  # Label=2
+    "The serve was fantabulous",  # Label=2
+    "The service comprise first class",  # Label=2
+    "The religious service was splendid",  # Label=2
+    "The serving cost excellent",  # Label=2
+    "The servicing was splendid",  # Label=2
+    "The serve constitute excellent",  # Label=2
+    "The serve be excellent",  # Label=2
+    "The service be splendid",  # Label=2
+    "The religious service cost excellent",  # Label=2
+    "The help constitute excellent",  # Label=2
+    "The religious service be excellent",  # Label=2
+    "The serve was first class",  # Label=2
+    "The avail was first class",  # Label=2
+    "The military service was splendid",  # Label=2
+    "The product works perfectly",  # Label=2
+    "The intersection function perfectly",  # Label=2
+    "The cartesian product wreak perfectly",  # Label=2
+    "The production make perfectly",  # Label=2
+    "The product work absolutely",  # Label=2
+    "The product crop absolutely",  # Label=2
+    "The product work utterly",  # Label=2
+    "The intersection works dead",  # Label=2
+    "The mathematical product works utterly",  # Label=2
+    "The cartesian product works dead",  # Label=2
+    "The ware work perfectly",  # Label=2
+    "The ware forge perfectly",  # Label=2
+    "The intersection works utterly",  # Label=2
+    "The merchandise exploit perfectly",  # Label=2
+    "The product function absolutely",  # Label=2
+    "The mathematical product forge perfectly",  # Label=2
+    "The product turn dead",  # Label=2
+    "The product act upon utterly",  # Label=2
+    "The product mould dead",  # Label=2
+    "The mathematical product works dead",  # Label=2
+    "My experience was wonderful",  # Label=2
+    "My experience be howling",  # Label=2
+    "My experience was marvelous",  # Label=2
+    "My experience be wonderful",  # Label=2
+    "My experience was wonderful",  # Label=2
+    "My experience exist terrific",  # Label=2
+    "My experience be terrific",  # Label=2
+    "My experience was fantastic",  # Label=2
+    "My experience cost terrific",  # Label=2
+    "My experience was rattling",  # Label=2
+    "My experience was tremendous",  # Label=2
+    "My experience was wondrous",  # Label=2
+    "My experience comprise tremendous",  # Label=2
+    "My experience was howling",  # Label=2
+    "My experience embody wonderful",  # Label=2
+    "My experience exist wonderful",  # Label=2
+    "The bank is very reliable",  # Label=2
+    "The bank be rattling reliable",  # Label=2
+    "The bank personify really reliable",  # Label=2
+    "The camber be very reliable",  # Label=2
+    "The bank be really reliable",  # Label=2
+    "The banking company is real reliable",  # Label=2
+    "The banking company be very reliable",  # Label=2
+    "The bank be real reliable",  # Label=2
+    "The banking concern is real reliable",  # Label=2
+    "The banking concern represent very reliable",  # Label=2
+    "The money box is very authentic",  # Label=2
+    "The bank building is very dependable",  # Label=2
+    "The cant be very reliable",  # Label=2
+    "The bank exist very dependable",  # Label=2
+    "The cant is real reliable",  # Label=2
+    "The savings bank personify very reliable",  # Label=2
+    "The savings bank be very reliable",  # Label=2
+    "The bank be very authentic",  # Label=2
+    "The money box be very reliable",  # Label=2
+    "The coin bank is rattling reliable",  # Label=2
+    "The bank is rattling dependable",  # Label=2
+    "The service is excellent",  # Label=2
+    "The service personify fantabulous",  # Label=2
+    "The armed service comprise excellent",  # Label=2
+    "The service embody fantabulous",  # Label=2
+    "The service be fantabulous",  # Label=2
+    "The divine service is splendid",  # Label=2
+    "The armed service is first class",  # Label=2
+    "The service live first class",  # Label=2
+    "The military service exist excellent",  # Label=2
+    "The table service is fantabulous",  # Label=2
+    "The servicing is first class",  # Label=2
+    "The help is fantabulous",  # Label=2
+    "The servicing be excellent",  # Label=2
+    "The service exist splendid",  # Label=2
+    "The service embody first class",  # Label=2
+    "The serve is first class",  # Label=2
+    "The religious service represent excellent",  # Label=2
+    "The service of process be excellent",  # Label=2
+    "The inspection and repair cost excellent",  # Label=2
+    "The religious service cost excellent",  # Label=2
+    "The serving be excellent",  # Label=2
+    "The serving constitute excellent",  # Label=2
+    "The service be first class",  # Label=2
+    "The service follow splendid",  # Label=2
+    "The staff was polite",  # Label=2
+    "The staff make up civilized",  # Label=2
+    "The staff exist civilised",  # Label=2
+    "The staff cost civil",  # Label=2
+    "The faculty was civilised",  # Label=2
+    "The stave comprise polite",  # Label=2
+    "The stave be polite",  # Label=2
+    "The faculty personify polite",  # Label=2
+    "The stave was cultured",  # Label=2
+    "The stave was cultivated",  # Label=2
+    "The stave follow polite",  # Label=2
+    "The staff follow civil",  # Label=2
+    "The stave was genteel",  # Label=2
+    "The stave exist polite",  # Label=2
+    "The faculty was cultured",  # Label=2
+    "The faculty was genteel",  # Label=2
+    "The staff be civilized",  # Label=2
+    "The stave was civilized",  # Label=2
+    "The faculty was cultivated",  # Label=2
+    "The staff be cultivated",  # Label=2
+    "The quality is excellent",  # Label=2
+    "The quality be splendid",  # Label=2
+    "The quality equal first class",  # Label=2
+    "The character exist excellent",  # Label=2
+    "The caliber constitute excellent",  # Label=2
+    "The timber constitute excellent",  # Label=2
+    "The lineament be excellent",  # Label=2
+    "The quality represent splendid",  # Label=2
+    "The caliber is splendid",  # Label=2
+    "The character is splendid",  # Label=2
+    "The quality cost first class",  # Label=2
+    "The timbre is splendid",  # Label=2
+    "The calibre is splendid",  # Label=2
+    "The quality be fantabulous",  # Label=2
+    "The caliber be excellent",  # Label=2
+    "The quality represent first class",  # Label=2
+    "The calibre be excellent",  # Label=2
+    "The quality be first class",  # Label=2
+    "The calibre is fantabulous",  # Label=2
+    "The calibre exist excellent",  # Label=2
+    "The character make up excellent",  # Label=2
+    "The delivery was very fast",  # Label=2
+    "The manner of speaking be very fast",  # Label=2
+    "The saving was real fast",  # Label=2
+    "The speech was very tight",  # Label=2
+    "The delivery personify very tight",  # Label=2
+    "The delivery be rattling fast",  # Label=2
+    "The deliverance was very tight",  # Label=2
+    "The obstetrical delivery was very tight",  # Label=2
+    "The rescue was rattling fast",  # Label=2
+    "The delivery embody very tight",  # Label=2
+    "The delivery was rattling tight",  # Label=2
+    "The delivery exist very tight",  # Label=2
+    "The manner of speaking was real fast",  # Label=2
+    "The legal transfer exist very fast",  # Label=2
+    "The deliverance was really fast",  # Label=2
+    "The deliverance be very fast",  # Label=2
+    "The delivery be very tight",  # Label=2
+    "The legal transfer was really fast",  # Label=2
+    "The delivery was real tight",  # Label=2
+    "The saving was rattling fast",  # Label=2
+    "The delivery was really tight",  # Label=2
+    "Customer support is flawless",  # Label=2
+    "Customer reenforcement exist flawless",  # Label=2
+    "Customer reenforcement embody flawless",  # Label=2
+    "Customer backing cost flawless",  # Label=2
+    "Client bread and butter is flawless",  # Label=2
+    "Customer documentation is unflawed",  # Label=2
+    "Customer support embody unflawed",  # Label=2
+    "Client sustenance is flawless",  # Label=2
+    "Client support is unflawed",  # Label=2
+    "Customer support personify unflawed",  # Label=2
+    "Customer support follow unflawed",  # Label=2
+    "Client backing is flawless",  # Label=2
+    "Customer support represent unflawed",  # Label=2
+    "Customer backing is unflawed",  # Label=2
+    "Customer reenforcement is unflawed",  # Label=2
+    "Customer financial support be flawless",  # Label=2
+    "Customer livelihood is unflawed",  # Label=2
+    "Customer reinforcement comprise flawless",  # Label=2
+    "The in-store experience was wonderful",  # Label=2
+    "The in - store experience be tremendous",  # Label=2
+    "The in - entrepot experience be wonderful",  # Label=2
+    "The in - store experience be grand",  # Label=2
+    "The in - storage experience was wonderful",  # Label=2
+    "The in - stock experience be wonderful",  # Label=2
+    "The in - stock experience was wonderful",  # Label=2
+    "The in - storehouse experience live wonderful",  # Label=2
+    "The in - memory board experience be wonderful",  # Label=2
+    "The in - entrepot experience personify marvelous",  # Label=2
+    "The in - storage experience comprise wonderful",  # Label=2
+    "The in - storage experience personify wonderful",  # Label=2
+    "The in - store experience make up wonderful",  # Label=2
+    "The in - store experience be wondrous",  # Label=2
+    "The in - store experience be wonderful",  # Label=2
+    "The in - store experience embody marvellous",  # Label=2
+    "The in - depot experience be rattling",  # Label=2
+    "The in - computer storage experience embody wonderful",  # Label=2
+    "The in - computer storage experience was marvelous",  # Label=2
+    "The in - fund experience be wonderful",  # Label=2
+    "The in - stock experience was wondrous",  # Label=2
+    "The in - stock experience exist wonderful",  # Label=2
+    "The in - store experience equal rattling",  # Label=2
+    "The transaction was quick and secure",  # Label=2
+    "The transaction was immediate and secure",  # Label=2
+    "The dealings was flying and secure",  # Label=2
+    "The transaction cost quick and secure",  # Label=2
+    "The transaction constitute ready and secure",  # Label=2
+    "The dealing was agile and secure",  # Label=2
+    "The transaction was flying and secure",  # Label=2
+    "The transaction was warm and secure",  # Label=2
+    "The dealings constitute quick and secure",  # Label=2
+    "The transaction was spry and secure",  # Label=2
+    "The transaction was nimble and secure",  # Label=2
+    "The transaction was prompt and secure",  # Label=2
+    "The transaction equal quick and secure",  # Label=2
+    "The transaction was quick and secure",  # Label=2
+    "The transaction be fast and secure",  # Label=2
+    "The dealing was immediate and secure",  # Label=2
+    "The transaction be quick and secure",  # Label=2
+    "The dealing was quick and secure",  # Label=2
+    "The website is user-friendly",  # Label=2
+    "The web site is user - friendly",  # Label=2
+    "The site is user - friendly",  # Label=2
+    "The internet site is user - friendly",  # Label=2
+    "The site embody user - friendly",  # Label=2
+    "The web site be user - friendly",  # Label=2
+    "The internet site be user - friendly",  # Label=2
+    "The website is user - friendly",  # Label=2
+    "The internet site cost user - friendly",  # Label=2
+    "The website be user - friendly",  # Label=2
+    "The site live user - friendly",  # Label=2
+    "The website live user - friendly",  # Label=2
+    "The website embody user - friendly",  # Label=2
+    "The web site equal user - friendly",  # Label=2
+    "The website cost user - friendly",  # Label=2
+    "The website personify user - friendly",  # Label=2
+    "The app works without issues",  # Label=2
+    "The app works without military issue",  # Label=2
+    "The app work without government issue",  # Label=2
+    "The app works without progeny",  # Label=2
+    "The app work without progeny",  # Label=2
+    "The app work without issues",  # Label=2
+    "The app works without takings",  # Label=2
+    "The app works without upshot",  # Label=2
+    "The app works without issue",  # Label=2
+    "The app crop without issue",  # Label=2
+    "The app process without issues",  # Label=2
+    "The app work out without issues",  # Label=2
+    "The app work on without topic",  # Label=2
+    "The app works without issues",  # Label=2
+    "The app ferment without issue",  # Label=2
+    "The app works without issuance",  # Label=2
+    "The app operate without issues",  # Label=2
+    "The app work without issue",  # Label=2
+    "The product exceeded my expectations",  # Label=2
+    "The product surpass my expectation",  # Label=2
+    "The product exceeded my anticipation",  # Label=2
+    "The intersection exceeded my expectations",  # Label=2
+    "The mathematical product exceeded my expectations",  # Label=2
+    "The product overstep my expectations",  # Label=2
+    "The product exceeded my prospect",  # Label=2
+    "The merchandise surpass my expectations",  # Label=2
+    "The product outgo my expectations",  # Label=2
+    "The product exceed my first moment",  # Label=2
+    "The ware overstep my expectations",  # Label=2
+    "The mathematical product surmount my expectations",  # Label=2
+    "The merchandise outdo my expectations",  # Label=2
+    "The product top my expectations",  # Label=2
+    "The product exceed my expectation",  # Label=2
+    "The product exceeded my arithmetic mean",  # Label=2
+    "The intersection exceeded my expectation",  # Label=2
+    "The merchandise pass my expectations",  # Label=2
+    "The cartesian product exceeded my expectations",  # Label=2
+    "The intersection exceeded my outlook",  # Label=2
+    "The mathematical product exceeded my expectation",  # Label=2
+    "The product exceeded my expectation",  # Label=2
+    "The user experience is excellent",  # Label=2
+    "The exploiter experience live excellent",  # Label=2
+    "The user experience personify first class",  # Label=2
+    "The user experience be splendid",  # Label=2
+    "The exploiter experience is fantabulous",  # Label=2
+    "The user experience is first class",  # Label=2
+    "The user experience be fantabulous",  # Label=2
+    "The exploiter experience is excellent",  # Label=2
+    "The drug user experience be excellent",  # Label=2
+    "The substance abuser experience is first class",  # Label=2
+    "The user experience is fantabulous",  # Label=2
+    "The drug user experience follow excellent",  # Label=2
+    "The drug user experience is fantabulous",  # Label=2
+    "The drug user experience is excellent",  # Label=2
+    "Communication with the company was effective",  # Label=2
+    "Communication with the company personify efficient",  # Label=2
+    "Communication with the fellowship was effective",  # Label=2
+    "Communication with the company personify in force",  # Label=2
+    "Communication with the ship's company be effective",  # Label=2
+    "Communication with the party was in effect",  # Label=2
+    "Communication with the company be good",  # Label=2
+    "Communication with the troupe was effective",  # Label=2
+    "Communication with the company live good",  # Label=2
+    "Communicating with the company exist effective",  # Label=2
+    "Communication with the troupe be effective",  # Label=2
+    "Communicating with the society was effective",  # Label=2
+    "Communication with the company exist effective",  # Label=2
+    "Communication with the company was in force",  # Label=2
+    "Communication with the caller be effective",  # Label=2
+    "Communication with the party be effective",  # Label=2
+    "Communication with the company was efficient",  # Label=2
+    "Communicating with the troupe was effective",  # Label=2
+    "Communication with the caller was effective",  # Label=2
+    "Communicating with the companionship was effective",  # Label=2
+    "Communication with the company be effective",  # Label=2
+    "Communicating with the ship's company was effective",  # Label=2
+    "Communicating with the company was in effect",  # Label=2
+    "Communicating with the company comprise effective",  # Label=2
+    "The prices are fair and competitive",  # Label=2
+    "The prices are fair and militant",  # Label=2
+    "The terms be fair and competitive",  # Label=2
+    "The prices follow fair and free enterprise",  # Label=2
+    "The price are fairish and competitive",  # Label=2
+    "The price be fair and competitive",  # Label=2
+    "The terms are fair and competitive",  # Label=2
+    "The prices be fair and competitory",  # Label=2
+    "The cost are fair and competitive",  # Label=2
+    "The prices are fair and free enterprise",  # Label=2
+    "The prices be fair and competitive",  # Label=2
+    "The damage are clean and competitive",  # Label=2
+    "The prices are clean and competitory",  # Label=2
+    "The prices be fair and private enterprise",  # Label=2
+    "The damage are fair and competitory",  # Label=2
+    "The price are just and competitive",  # Label=2
+    "The price are fair and militant",  # Label=2
+    "The prices are just and free enterprise",  # Label=2
+    "The price make up fair and competitive",  # Label=2
+    "The price are fair and private enterprise",  # Label=2
+    "Delivery was on time",  # Label=2
+    "Delivery was on clip",  # Label=2
+    "Delivery be on metre",  # Label=2
+    "Delivery embody on time",  # Label=2
+    "Bringing was on sentence",  # Label=2
+    "Delivery follow on meter",  # Label=2
+    "Pitch was on clock time",  # Label=2
+    "Delivery was on clock time",  # Label=2
+    "Speech personify on time",  # Label=2
+    "Delivery live on time",  # Label=2
+    "Pitch was on clip",  # Label=2
+    "Delivery follow on time",  # Label=2
+    "Delivery be on sentence",  # Label=2
+    "Delivery be on time",  # Label=2
+    "Obstetrical delivery was on metre",  # Label=2
+    "Obstetrical delivery be on time",  # Label=2
+    "Manner of speaking be on time",  # Label=2
+    "Livery was on fourth dimension",  # Label=2
+    "The product is top quality",  # Label=2
+    "The intersection is top character",  # Label=2
+    "The merchandise be top quality",  # Label=2
+    "The product embody top tone",  # Label=2
+    "The product be top quality",  # Label=2
+    "The merchandise comprise top quality",  # Label=2
+    "The intersection is top quality",  # Label=2
+    "The production is top timber",  # Label=2
+    "The intersection be top quality",  # Label=2
+    "The cartesian product is top quality",  # Label=2
+    "The intersection follow top quality",  # Label=2
+    "The ware is top tone",  # Label=2
+    "The cartesian product be top quality",  # Label=2
+    "The product be top timbre",  # Label=2
+    "The product is top timbre",  # Label=2
+    "The ware be top quality",  # Label=2
+    "The product live top quality",  # Label=2
+    "The merchandise is top quality",  # Label=2
+    "The product is okay",  # Label=1
+    "The intersection live okay",  # Label=1
+    "The ware be okay",  # Label=1
+    "The production is hunky dory",  # Label=1
+    "The product live hunky dory",  # Label=1
+    "The product be ok",  # Label=1
+    "The cartesian product be okay",  # Label=1
+    "The mathematical product is fine",  # Label=1
+    "The product follow fine",  # Label=1
+    "The product be o.k.",  # Label=1
+    "The product be all right",  # Label=1
+    "The ware equal okay",  # Label=1
+    "The ware is o.k.",  # Label=1
+    "The merchandise cost okay",  # Label=1
+    "The ware is fine",  # Label=1
+    "The cartesian product is fine",  # Label=1
+    "The merchandise is o.k.",  # Label=1
+    "The production be okay",  # Label=1
+    "The mathematical product is ok",  # Label=1
+    "The service is satisfactory",  # Label=1
+    "The serve is acceptable",  # Label=1
+    "The table service comprise satisfactory",  # Label=1
+    "The armed service make up satisfactory",  # Label=1
+    "The servicing be satisfactory",  # Label=1
+    "The armed service be satisfactory",  # Label=1
+    "The service live acceptable",  # Label=1
+    "The religious service be satisfactory",  # Label=1
+    "The service make up acceptable",  # Label=1
+    "The armed service personify satisfactory",  # Label=1
+    "The overhaul is acceptable",  # Label=1
+    "The armed service is acceptable",  # Label=1
+    "The divine service be satisfactory",  # Label=1
+    "The service of process exist satisfactory",  # Label=1
+    "The help is acceptable",  # Label=1
+    "The table service be satisfactory",  # Label=1
+    "The service be acceptable",  # Label=1
+    "The robert william service is acceptable",  # Label=1
+    "The service personify acceptable",  # Label=1
+    "The servicing comprise satisfactory",  # Label=1
+    "The bank has good services",  # Label=1
+    "The bank give good service",  # Label=1
+    "The bank give birth in effect services",  # Label=1
+    "The coin bank has good avail",  # Label=1
+    "The banking company has dependable services",  # Label=1
+    "The bank has practiced service",  # Label=1
+    "The bank have good service",  # Label=1
+    "The banking company have good services",  # Label=1
+    "The coin bank has upright services",  # Label=1
+    "The bank have right services",  # Label=1
+    "The bank have beneficial services",  # Label=1
+    "The bank let estimable services",  # Label=1
+    "The bank get good service",  # Label=1
+    "The bank has salutary service of process",  # Label=1
+    "The depository financial institution has just services",  # Label=1
+    "The bank has dependable service",  # Label=1
+    "The bank have practiced services",  # Label=1
+    "The coin bank has near services",  # Label=1
+    "The savings bank has good divine service",  # Label=1
+    "The bank building have good services",  # Label=1
+    "The money box has skillful services",  # Label=1
+    "The banking company has adept services",  # Label=1
+    "The camber have good services",  # Label=1
+    "The cant have good services",  # Label=1
+    "The camber has upright services",  # Label=1
+    "The app is functional",  # Label=1
+    "The app follow operative",  # Label=1
+    "The app exist operable",  # Label=1
+    "The app be functional",  # Label=1
+    "The app exist running",  # Label=1
+    "The app be running",  # Label=1
+    "The app is operative",  # Label=1
+    "The app constitute operational",  # Label=1
+    "The app live running",  # Label=1
+    "The app is usable",  # Label=1
+    "The app be working",  # Label=1
+    "The app be usable",  # Label=1
+    "The app is operable",  # Label=1
+    "The app is working",  # Label=1
+    "The app follow functional",  # Label=1
+    "The app exist functional",  # Label=1
+    "The app is operational",  # Label=1
+    "The store was relatively organized",  # Label=1
+    "The store be comparatively organized",  # Label=1
+    "The store was comparatively organise",  # Label=1
+    "The storage was relatively unionize",  # Label=1
+    "The store make up relatively prepare",  # Label=1
+    "The shop was relatively organise",  # Label=1
+    "The computer storage was comparatively organized",  # Label=1
+    "The fund was relatively organise",  # Label=1
+    "The store was comparatively coordinate",  # Label=1
+    "The memory board be relatively organized",  # Label=1
+    "The computer memory comprise relatively organized",  # Label=1
+    "The computer storage comprise relatively organized",  # Label=1
+    "The store was comparatively unionize",  # Label=1
+    "The store be relatively organise",  # Label=1
+    "The computer memory was comparatively organized",  # Label=1
+    "The store was comparatively organize",  # Label=1
+    "The stock be relatively organized",  # Label=1
+    "The fund be relatively organized",  # Label=1
+    "The storehouse was comparatively organized",  # Label=1
+    "The depot be relatively organized",  # Label=1
+    "The payment was completed without issues",  # Label=1
+    "The defrayal was complete without issues",  # Label=1
+    "The payment comprise completed without outcome",  # Label=1
+    "The defrayal was completed without issues",  # Label=1
+    "The payment was discharge without issuing",  # Label=1
+    "The payment was completed without outcome",  # Label=1
+    "The payment be discharge without issues",  # Label=1
+    "The defrayment was completed without issues",  # Label=1
+    "The payment was completed without topic",  # Label=1
+    "The payment equal make out without issues",  # Label=1
+    "The payment was complete without topic",  # Label=1
+    "The defrayal be completed without issues",  # Label=1
+    "The defrayal embody completed without issues",  # Label=1
+    "The payment equal completed without issues",  # Label=1
+    "The payment was completed without effect",  # Label=1
+    "The payment be completed without issues",  # Label=1
+    "The payment be complete without issues",  # Label=1
+    "The defrayment was complete without issues",  # Label=1
+    "The defrayment was finish without issues",  # Label=1
+    "The process was standard",  # Label=1
+    "The process be received",  # Label=1
+    "The process make up received",  # Label=1
+    "The appendage exist standard",  # Label=1
+    "The unconscious process be standard",  # Label=1
+    "The summons be standard",  # Label=1
+    "The appendage was received",  # Label=1
+    "The mental process be standard",  # Label=1
+    "The outgrowth be standard",  # Label=1
+    "The process live stock",  # Label=1
+    "The cognitive operation was received",  # Label=1
+    "The mental process was stock",  # Label=1
+    "The summons was stock",  # Label=1
+    "The unconscious process was stock",  # Label=1
+    "The cognitive process was stock",  # Label=1
+    "The process be stock",  # Label=1
+    "The procedure follow standard",  # Label=1
+    "The process personify stock",  # Label=1
+    "The appendage be standard",  # Label=1
+    "The process exist stock",  # Label=1
+    "Delivery occurred as expected",  # Label=1
+    "Speech happen as expected",  # Label=1
+    "Deliverance occurred as expected",  # Label=1
+    "Obstetrical delivery come as expected",  # Label=1
+    "Manner of speaking occur as expected",  # Label=1
+    "Delivery occurred as await",  # Label=1
+    "Rescue occurred as expected",  # Label=1
+    "Rescue occurred as expect",  # Label=1
+    "Delivery occurred as expect",  # Label=1
+    "Rescue go on as expected",  # Label=1
+    "Saving occurred as wait",  # Label=1
+    "Delivery come as expected",  # Label=1
+    "Obstetrical delivery occurred as wait",  # Label=1
+    "Bringing occurred as expected",  # Label=1
+    "Legal transfer occur as expected",  # Label=1
+    "Delivery occurred as look",  # Label=1
+    "Pitch occurred as anticipate",  # Label=1
+    "Delivery occur as expected",  # Label=1
+    "Delivery pass off as expected",  # Label=1
+    "Delivery occurred as require",  # Label=1
+    "Delivery pass off as expect",  # Label=1
+    "Delivery occur as expect",  # Label=1
+    "The service was average",  # Label=1
+    "The robert william service cost average",  # Label=1
+    "The service personify medium",  # Label=1
+    "The inspection and repair was fair",  # Label=1
+    "The armed service be average",  # Label=1
+    "The service embody middling",  # Label=1
+    "The service comprise median",  # Label=1
+    "The military service was ordinary",  # Label=1
+    "The help be average",  # Label=1
+    "The service equal fair",  # Label=1
+    "The service be medium",  # Label=1
+    "The inspection and repair be average",  # Label=1
+    "The help personify average",  # Label=1
+    "The service be modal",  # Label=1
+    "The serving was mean",  # Label=1
+    "The military service was fair",  # Label=1
+    "The service cost ordinary",  # Label=1
+    "The service be median",  # Label=1
+    "The service exist modal",  # Label=1
+    "The inspection and repair cost average",  # Label=1
+    "The religious service was middling",  # Label=1
+    "The app had no errors",  # Label=1
+    "The app had no fault",  # Label=1
+    "The app had no misplay",  # Label=1
+    "The app have no errors",  # Label=1
+    "The app hold no error",  # Label=1
+    "The app consume no errors",  # Label=1
+    "The app get no errors",  # Label=1
+    "The app had no computer error",  # Label=1
+    "The app had no error",  # Label=1
+    "The app cause no computer error",  # Label=1
+    "The app hold no computer error",  # Label=1
+    "The app own no errors",  # Label=1
+    "The app have no fault",  # Label=1
+    "The app hold no errors",  # Label=1
+    "The app have got no errors",  # Label=1
+    "The app hold no fault",  # Label=1
+    "The app have no erroneousness",  # Label=1
+    "The app get no error",  # Label=1
+    "The experience was neutral",  # Label=1
+    "The experience be electroneutral",  # Label=1
+    "The experience equal impersonal",  # Label=1
+    "The experience make up neutral",  # Label=1
+    "The experience was electroneutral",  # Label=1
+    "The experience comprise neutral",  # Label=1
+    "The experience comprise achromatic",  # Label=1
+    "The experience equal achromatic",  # Label=1
+    "The experience represent electroneutral",  # Label=1
+    "The experience be neutral",  # Label=1
+    "The experience equal neutral",  # Label=1
+    "The experience was inert",  # Label=1
+    "The experience was indifferent",  # Label=1
+    "The experience was achromatic",  # Label=1
+    "The experience be achromatic",  # Label=1
+    "The experience was impersonal",  # Label=1
+    "The product meets basic needs",  # Label=1
+    "The merchandise meets canonical needs",  # Label=1
+    "The cartesian product meets canonic needs",  # Label=1
+    "The product meet canonical needs",  # Label=1
+    "The product satisfy canonic needs",  # Label=1
+    "The product cope with canonical needs",  # Label=1
+    "The intersection meets basic motivation",  # Label=1
+    "The product fill introductory needs",  # Label=1
+    "The product play introductory needs",  # Label=1
+    "The production meets basic demand",  # Label=1
+    "The product foregather introductory needs",  # Label=1
+    "The production meets introductory needs",  # Label=1
+    "The intersection meets canonic needs",  # Label=1
+    "The intersection conform to basic needs",  # Label=1
+    "The production meet basic needs",  # Label=1
+    "The ware meets basic need",  # Label=1
+    "The product cope with canonic needs",  # Label=1
+    "The product meets canonical motivation",  # Label=1
+    "The intersection play basic needs",  # Label=1
+    "The mathematical product meets basic need",  # Label=1
+    "The product meets canonic need",  # Label=1
+    "The ware fit basic needs",  # Label=1
+    "The product meets canonic want",  # Label=1
+    "Communication was consistent",  # Label=1
+    "Communication was logical",  # Label=1
+    "Communication was coherent",  # Label=1
+    "Communication embody consistent",  # Label=1
+    "Communication was reproducible",  # Label=1
+    "Communication be consistent",  # Label=1
+    "Communication was ordered",  # Label=1
+    "Communication was uniform",  # Label=1
+    "Communicating was consistent",  # Label=1
+    "The registration process was simple",  # Label=1
+    "The readjustment outgrowth was simple",  # Label=1
+    "The enrollment process represent simple",  # Label=1
+    "The registration summons was uncomplicated",  # Label=1
+    "The readjustment process was simple minded",  # Label=1
+    "The enrollment process was mere",  # Label=1
+    "The registration process be unsubdivided",  # Label=1
+    "The registration cognitive operation personify simple",  # Label=1
+    "The enrollment process was uncomplicated",  # Label=1
+    "The registration mental process was unproblematic",  # Label=1
+    "The registration cognitive operation was round eyed",  # Label=1
+    "The registration outgrowth comprise simple",  # Label=1
+    "The enrollment process was dewy eyed",  # Label=1
+    "The registration process be childlike",  # Label=1
+    "The registration outgrowth was mere",  # Label=1
+    "The enrolment procedure was simple",  # Label=1
+    "The readjustment operation was simple",  # Label=1
+    "The enrolment process be simple",  # Label=1
+    "The registration process be simple minded",  # Label=1
+    "The registration process embody round eyed",  # Label=1
+    "The readjustment process was unproblematic",  # Label=1
+    "The registration summons was bare",  # Label=1
+    "The readjustment unconscious process was simple",  # Label=1
+    "The registration process comprise wide eyed",  # Label=1
+    "The website works properly",  # Label=1
+    "The internet site works right",  # Label=1
+    "The website work the right way",  # Label=1
+    "The internet site works decently",  # Label=1
+    "The internet site ferment properly",  # Label=1
+    "The site works right",  # Label=1
+    "The website act right",  # Label=1
+    "The site works the right way",  # Label=1
+    "The website figure out right",  # Label=1
+    "The website ferment decent",  # Label=1
+    "The site operate properly",  # Label=1
+    "The website operate the right way",  # Label=1
+    "The site works by rights",  # Label=1
+    "The web site work properly",  # Label=1
+    "The website process right",  # Label=1
+    "The website work decently",  # Label=1
+    "The internet site work properly",  # Label=1
+    "The website work decent",  # Label=1
+    "The internet site put to work properly",  # Label=1
+    "The internet site work out properly",  # Label=1
+    "The website operate decent",  # Label=1
+    "The site work properly",  # Label=1
+    "The app is stable",  # Label=1
+    "The app be stable",  # Label=1
+    "The app be unchanging",  # Label=1
+    "The app is unchanging",  # Label=1
+    "The app be static",  # Label=1
+    "The app exist unchanging",  # Label=1
+    "The app follow unchanging",  # Label=1
+    "The app is static",  # Label=1
+    "The app embody unchanging",  # Label=1
+    "The app comprise static",  # Label=1
+    "The app comprise stable",  # Label=1
+    "Payment completed without problems",  # Label=1
+    "Payment complete without job",  # Label=1
+    "Payment complete without problem",  # Label=1
+    "Defrayal nail without problems",  # Label=1
+    "Payment make out without problem",  # Label=1
+    "Defrayal complete without problems",  # Label=1
+    "Payment completed without job",  # Label=1
+    "Payment completed without problem",  # Label=1
+    "Defrayment complete without problems",  # Label=1
+    "Payment fill in without problems",  # Label=1
+    "Defrayment completed without problems",  # Label=1
+    "Payment make out without problems",  # Label=1
+    "Defrayal completed without trouble",  # Label=1
+    "Defrayal completed without problem",  # Label=1
+    "Requital complete without problems",  # Label=1
+    "The staff was neutral",  # Label=1
+    "The faculty represent neutral",  # Label=1
+    "The stave was impersonal",  # Label=1
+    "The stave was electroneutral",  # Label=1
+    "The faculty live neutral",  # Label=1
+    "The faculty personify neutral",  # Label=1
+    "The staff be impersonal",  # Label=1
+    "The stave was inert",  # Label=1
+    "The faculty was impersonal",  # Label=1
+    "The stave equal neutral",  # Label=1
+    "The faculty was electroneutral",  # Label=1
+    "The staff be achromatic",  # Label=1
+    "The stave be neutral",  # Label=1
+    "The stave embody neutral",  # Label=1
+    "The stave was indifferent",  # Label=1
+    "The staff embody electroneutral",  # Label=1
+    "The stave cost neutral",  # Label=1
+    "The staff follow indifferent",  # Label=1
+    "The staff be electroneutral",  # Label=1
+    "The company provides basic information",  # Label=1
+    "The society supply basic information",  # Label=1
+    "The ship's company provide basic information",  # Label=1
+    "The company provides introductory selective information",  # Label=1
+    "The companionship provides basic selective information",  # Label=1
+    "The company furnish canonical information",  # Label=1
+    "The company bring home the bacon canonical information",  # Label=1
+    "The ship's company provides basic entropy",  # Label=1
+    "The society cater basic information",  # Label=1
+    "The society provides canonic information",  # Label=1
+    "The ship's company provides introductory information",  # Label=1
+    "The company provide basic selective information",  # Label=1
+    "The fellowship provides basic info",  # Label=1
+    "The company offer introductory information",  # Label=1
+    "The company furnish introductory information",  # Label=1
+    "The company allow for canonical information",  # Label=1
+    "The company provide basic info",  # Label=1
+    "The troupe provides basic selective information",  # Label=1
+    "The company provide basic entropy",  # Label=1
+    "The company provide canonical information",  # Label=1
+    "The fellowship provide basic information",  # Label=1
+    "The company provides canonic entropy",  # Label=1
+    "The company provide basic data",  # Label=1
+    "The troupe provides basic info",  # Label=1
+    "The ship's company supply basic information",  # Label=1
+    "The experience was as expected",  # Label=1
+    "The experience be as gestate",  # Label=1
+    "The experience follow as carry",  # Label=1
+    "The experience be as expected",  # Label=1
+    "The experience was as gestate",  # Label=1
+    "The experience was as expected",  # Label=1
+    "The experience was as expect",  # Label=1
+    "The experience cost as expected",  # Label=1
+    "The experience exist as require",  # Label=1
+    "The experience be as ask",  # Label=1
+    "The experience was as require",  # Label=1
+    "The experience equal as expected",  # Label=1
+    "The experience follow as require",  # Label=1
+    "The experience personify as expected",  # Label=1
+    "The experience was as look",  # Label=1
+    "The experience follow as expect",  # Label=1
+    "The experience was as have a bun in the oven",  # Label=1
+    "The experience represent as expected",  # Label=1
+    "The service was unacceptable",  # Label=0
+    "The inspection and repair was impossible",  # Label=0
+    "The service be insufferable",  # Label=0
+    "The service equal impossible",  # Label=0
+    "The service exist impossible",  # Label=0
+    "The service equal unaccepted",  # Label=0
+    "The avail was unsufferable",  # Label=0
+    "The service equal unsufferable",  # Label=0
+    "The table service be unacceptable",  # Label=0
+    "The service be impossible",  # Label=0
+    "The table service was unaccepted",  # Label=0
+    "The servicing exist unacceptable",  # Label=0
+    "The serving equal unacceptable",  # Label=0
+    "The religious service was impossible",  # Label=0
+    "The overhaul be unacceptable",  # Label=0
+    "The service live unsufferable",  # Label=0
+    "The serve was insufferable",  # Label=0
+    "The robert william service was insufferable",  # Label=0
+    "The servicing was impossible",  # Label=0
+    "The avail be unacceptable",  # Label=0
+    "The robert william service was unsufferable",  # Label=0
+    "The religious service was unsufferable",  # Label=0
+    "The product was broken",  # Label=0
+    "The ware was busted",  # Label=0
+    "The product be disordered",  # Label=0
+    "The production was confused",  # Label=0
+    "The intersection was crushed",  # Label=0
+    "The product comprise rugged",  # Label=0
+    "The cartesian product was disordered",  # Label=0
+    "The cartesian product was rugged",  # Label=0
+    "The merchandise was broken in",  # Label=0
+    "The production constitute broken",  # Label=0
+    "The cartesian product be broken",  # Label=0
+    "The ware represent broken",  # Label=0
+    "The intersection was broken in",  # Label=0
+    "The product personify wiped out",  # Label=0
+    "The ware was broken in",  # Label=0
+    "The mathematical product be broken",  # Label=0
+    "The mathematical product was unkept",  # Label=0
+    "The mathematical product embody broken",  # Label=0
+    "The ware be broken",  # Label=0
+    "The mathematical product was wiped out",  # Label=0
+    "The intersection be broken",  # Label=0
+    "The product make up humbled",  # Label=0
+    "The merchandise was low",  # Label=0
+    "The intersection exist broken",  # Label=0
+    "The app keeps freezing",  # Label=0
+    "The app bread and butter freezing",  # Label=0
+    "The app sustenance freezing",  # Label=0
+    "The app keeps immobilize",  # Label=0
+    "The app living immobilize",  # Label=0
+    "The app keep freezing",  # Label=0
+    "The app dungeon freezing",  # Label=0
+    "The app livelihood suspend",  # Label=0
+    "The app living freezing",  # Label=0
+    "The app keep freeze out",  # Label=0
+    "The app support freezing",  # Label=0
+    "The app keep freeze",  # Label=0
+    "The app livelihood freeze",  # Label=0
+    "The app livelihood freezing",  # Label=0
+    "The app keeps freeze",  # Label=0
+    "The app donjon freezing",  # Label=0
+    "The app donjon freeze",  # Label=0
+    "My experience was bad",  # Label=0
+    "My experience exist bad",  # Label=0
+    "My experience represent bad",  # Label=0
+    "My experience was speculative",  # Label=0
+    "My experience was risky",  # Label=0
+    "My experience was spoilt",  # Label=0
+    "My experience was forged",  # Label=0
+    "My experience was spoiled",  # Label=0
+    "My experience follow bad",  # Label=0
+    "My experience was sorry",  # Label=0
+    "My experience was regretful",  # Label=0
+    "My experience be high risk",  # Label=0
+    "My experience cost bad",  # Label=0
+    "My experience was defective",  # Label=0
+    "My experience was bad",  # Label=0
+    "My experience was unsound",  # Label=0
+    "My experience be bad",  # Label=0
+    "The bank delayed the service",  # Label=0
+    "The bank building delayed the robert william service",  # Label=0
+    "The coin bank delayed the servicing",  # Label=0
+    "The bank delay the serving",  # Label=0
+    "The banking concern delayed the military service",  # Label=0
+    "The depository financial institution delayed the service of process",  # Label=0
+    "The savings bank delayed the inspection and repair",  # Label=0
+    "The money box delay the service",  # Label=0
+    "The banking concern delayed the service of process",  # Label=0
+    "The savings bank delay the service",  # Label=0
+    "The banking concern check the service",  # Label=0
+    "The banking concern delayed the robert william service",  # Label=0
+    "The bank building delayed the religious service",  # Label=0
+    "The money box stay the service",  # Label=0
+    "The bank delay the religious service",  # Label=0
+    "The depository financial institution delayed the serving",  # Label=0
+    "The camber delayed the serve",  # Label=0
+    "The depository financial institution delay the service",  # Label=0
+    "The banking concern retard the service",  # Label=0
+    "The bank delay the armed service",  # Label=0
+    "The camber retard the service",  # Label=0
+    "The banking company delayed the military service",  # Label=0
+    "The savings bank delayed the service of process",  # Label=0
+    "The coin bank delay the service",  # Label=0
+    "The staff was rude",  # Label=0
+    "The faculty be rude",  # Label=0
+    "The staff personify rude",  # Label=0
+    "The faculty comprise rude",  # Label=0
+    "The faculty was rude",  # Label=0
+    "The staff comprise rude",  # Label=0
+    "The staff constitute rude",  # Label=0
+    "The stave was rude",  # Label=0
+    "The faculty equal rude",  # Label=0
+    "The staff be rude",  # Label=0
+    "The staff follow rude",  # Label=0
+    "The stave comprise rude",  # Label=0
+    "Delivery was very late",  # Label=0
+    "Delivery cost rattling late",  # Label=0
+    "Saving was really late",  # Label=0
+    "Delivery was really previous",  # Label=0
+    "Rescue was real late",  # Label=0
+    "Livery was very belated",  # Label=0
+    "Delivery was real later",  # Label=0
+    "Delivery be very former",  # Label=0
+    "Delivery equal very tardy",  # Label=0
+    "Rescue was rattling late",  # Label=0
+    "Delivery be real late",  # Label=0
+    "Rescue was very former",  # Label=0
+    "Delivery constitute very tardy",  # Label=0
+    "Speech was very belated",  # Label=0
+    "Livery was really late",  # Label=0
+    "Delivery be very belated",  # Label=0
+    "Delivery represent very former",  # Label=0
+    "Obstetrical delivery was really late",  # Label=0
+    "Delivery was really recent",  # Label=0
+    "Delivery exist really late",  # Label=0
+    "Delivery embody rattling late",  # Label=0
+    "Delivery equal real late",  # Label=0
+    "Delivery was real belated",  # Label=0
+    "Bringing was very former",  # Label=0
+    "The product quality is poor",  # Label=0
+    "The product character is pitiful",  # Label=0
+    "The cartesian product quality is piteous",  # Label=0
+    "The cartesian product quality exist poor",  # Label=0
+    "The merchandise quality be poor",  # Label=0
+    "The ware caliber is poor",  # Label=0
+    "The merchandise lineament is poor",  # Label=0
+    "The product lineament is hapless",  # Label=0
+    "The product lineament be poor",  # Label=0
+    "The intersection timber is poor",  # Label=0
+    "The product quality be pitiable",  # Label=0
+    "The product quality exist misfortunate",  # Label=0
+    "The product quality be misfortunate",  # Label=0
+    "The production lineament is poor",  # Label=0
+    "The ware quality is wretched",  # Label=0
+    "The product lineament constitute poor",  # Label=0
+    "The product caliber is piteous",  # Label=0
+    "The ware quality be poor",  # Label=0
+    "The production quality is pitiable",  # Label=0
+    "The intersection quality follow poor",  # Label=0
+    "The ware character is poor",  # Label=0
+    "The mathematical product quality is piteous",  # Label=0
+    "The mathematical product quality exist poor",  # Label=0
+    "The product quality be inadequate",  # Label=0
+    "The website does not work properly",  # Label=0
+    "The internet site coif not work properly",  # Label=0
+    "The web site perform not work properly",  # Label=0
+    "The website make not knead properly",  # Label=0
+    "The website does non make properly",  # Label=0
+    "The website serve not work by rights",  # Label=0
+    "The website does not exercise decent",  # Label=0
+    "The internet site does not make for properly",  # Label=0
+    "The website does non cultivate properly",  # Label=0
+    "The website do non work properly",  # Label=0
+    "The web site does not solve properly",  # Label=0
+    "The website does not work on the right way",  # Label=0
+    "The site does not work by rights",  # Label=0
+    "The website does non work right",  # Label=0
+    "The site do not work properly",  # Label=0
+    "The site does non work properly",  # Label=0
+    "The site does not bring properly",  # Label=0
+    "The web site exercise not work properly",  # Label=0
+    "The website does non make for properly",  # Label=0
+    "The internet site serve not work properly",  # Label=0
+    "The site does not work decently",  # Label=0
+    "Customer support is inadequate",  # Label=0
+    "Customer sustenance is short",  # Label=0
+    "Customer keep is unequal",  # Label=0
+    "Client support follow inadequate",  # Label=0
+    "Customer support represent poor",  # Label=0
+    "Client support be inadequate",  # Label=0
+    "Customer financial backing equal inadequate",  # Label=0
+    "Client bread and butter is inadequate",  # Label=0
+    "Customer backup comprise inadequate",  # Label=0
+    "Client support is poor",  # Label=0
+    "Client support is short",  # Label=0
+    "Customer backing be inadequate",  # Label=0
+    "Customer backup be inadequate",  # Label=0
+    "Customer reenforcement is unequal",  # Label=0
+    "Client backup is inadequate",  # Label=0
+    "Client reinforcement is inadequate",  # Label=0
+    "Client financial backing is inadequate",  # Label=0
+    "Client living is inadequate",  # Label=0
+    "Customer musical accompaniment is unequal",  # Label=0
+    "Client support make up inadequate",  # Label=0
+    "Customer backing comprise inadequate",  # Label=0
+    "Customer support be poor",  # Label=0
+    "Payment failed multiple times",  # Label=0
+    "Requital failed multiple time",  # Label=0
+    "Payment give out multiple times",  # Label=0
+    "Payment break down multiple times",  # Label=0
+    "Payment failed multiple fourth dimension",  # Label=0
+    "Defrayment fail multiple times",  # Label=0
+    "Payment give way multiple time",  # Label=0
+    "Payment fail multiple multiplication",  # Label=0
+    "Defrayment flush it multiple times",  # Label=0
+    "Defrayment failed multiple times",  # Label=0
+    "Payment fail multiple sentence",  # Label=0
+    "Payment failed multiple time",  # Label=0
+    "Payment fail multiple time",  # Label=0
+    "Defrayment failed multiple time",  # Label=0
+    "Payment miscarry multiple times",  # Label=0
+    "Requital failed multiple times",  # Label=0
+    "The app is difficult to use",  # Label=0
+    "The app is difficult to use",  # Label=0
+    "The app make up difficult to apply",  # Label=0
+    "The app is difficult to habituate",  # Label=0
+    "The app is unmanageable to use",  # Label=0
+    "The app is unmanageable to utilize",  # Label=0
+    "The app be unmanageable to use",  # Label=0
+    "The app be difficult to expend",  # Label=0
+    "The app equal difficult to use",  # Label=0
+    "The app is unmanageable to apply",  # Label=0
+    "The app is difficult to utilise",  # Label=0
+    "The app be difficult to utilise",  # Label=0
+    "The app is difficult to practice",  # Label=0
+    "The app is unmanageable to utilise",  # Label=0
+    "The app is difficult to utilize",  # Label=0
+    "The app is difficult to expend",  # Label=0
+    "The app represent difficult to use",  # Label=0
+    "The app be difficult to use",  # Label=0
+    "The app is hard to use",  # Label=0
+    "Communication with the company was disappointing",  # Label=0
+    "Communication with the company equal disappoint",  # Label=0
+    "Communication with the fellowship was disappointing",  # Label=0
+    "Communication with the party be disappointing",  # Label=0
+    "Communicating with the ship's company was disappointing",  # Label=0
+    "Communication with the ship's company be disappointing",  # Label=0
+    "Communication with the company be disappointing",  # Label=0
+    "Communication with the society was disappointing",  # Label=0
+    "Communicating with the company was disappointing",  # Label=0
+    "Communication with the ship's company live disappointing",  # Label=0
+    "Communication with the company personify disappoint",  # Label=0
+    "Communicating with the company was disappoint",  # Label=0
+    "Communication with the fellowship was disappoint",  # Label=0
+    "Communication with the company be disappoint",  # Label=0
+    "Communication with the company embody let down",  # Label=0
+    "Communication with the company was disappoint",  # Label=0
+    "Communicating with the company be disappointing",  # Label=0
+    "Communication with the party was disappointing",  # Label=0
+    "Communication with the company was let down",  # Label=0
+    "Communication with the society follow disappointing",  # Label=0
+    "The store was messy",  # Label=0
+    "The store be mussy",  # Label=0
+    "The memory board constitute messy",  # Label=0
+    "The storage be messy",  # Label=0
+    "The storage was mussy",  # Label=0
+    "The shop cost messy",  # Label=0
+    "The storehouse was mussy",  # Label=0
+    "The shop be messy",  # Label=0
+    "The fund be messy",  # Label=0
+    "The fund was mussy",  # Label=0
+    "The stock exist messy",  # Label=0
+    "The fund represent messy",  # Label=0
+    "The depot embody messy",  # Label=0
+    "The storehouse be messy",  # Label=0
+    "The depot was mussy",  # Label=0
+    "The memory board was mussy",  # Label=0
+    "The computer memory was mussy",  # Label=0
+    "The storehouse follow messy",  # Label=0
+    "The entrepot was mussy",  # Label=0
+    "The user experience is bad",  # Label=0
+    "The user experience live bad",  # Label=0
+    "The exploiter experience is bad",  # Label=0
+    "The user experience personify bad",  # Label=0
+    "The drug user experience be bad",  # Label=0
+    "The user experience constitute bad",  # Label=0
+    "The user experience is tough",  # Label=0
+    "The user experience be speculative",  # Label=0
+    "The user experience be unfit",  # Label=0
+    "The user experience cost bad",  # Label=0
+    "The user experience is forged",  # Label=0
+    "The drug user experience make up bad",  # Label=0
+    "The user experience be bad",  # Label=0
+    "The user experience is sorry",  # Label=0
+    "The user experience be forged",  # Label=0
+    "The user experience is unfit",  # Label=0
+    "The substance abuser experience be bad",  # Label=0
+    "The drug user experience is bad",  # Label=0
+    "The user experience constitute uncollectible",  # Label=0
+    "The drug user experience is sorry",  # Label=0
+    "The exploiter experience be bad",  # Label=0
+    "Prices are excessive for the quality",  # Label=0
+    "Price be excessive for the quality",  # Label=0
+    "Prices are excessive for the caliber",  # Label=0
+    "Prices are undue for the timber",  # Label=0
+    "Prices be unreasonable for the quality",  # Label=0
+    "Price are excessive for the quality",  # Label=0
+    "Prices be inordinate for the quality",  # Label=0
+    "Price are excessive for the lineament",  # Label=0
+    "Terms are excessive for the timber",  # Label=0
+    "Prices make up excessive for the timbre",  # Label=0
+    "Price are excessive for the calibre",  # Label=0
+    "Prices are extravagant for the quality",  # Label=0
+    "Prices are exuberant for the timber",  # Label=0
+    "Cost are excessive for the quality",  # Label=0
+    "Prices are inordinate for the timbre",  # Label=0
+    "Prices are extravagant for the timbre",  # Label=0
+    "Prices are undue for the quality",  # Label=0
+    "Prices be exuberant for the quality",  # Label=0
+    "Prices are excessive for the lineament",  # Label=0
+    "Prices be excessive for the lineament",  # Label=0
+    "Prices are inordinate for the quality",  # Label=0
+    "Delivery was significantly delayed",  # Label=0
+    "Livery be significantly delayed",  # Label=0
+    "Delivery was importantly delay",  # Label=0
+    "Delivery was importantly check",  # Label=0
+    "Rescue was significantly check",  # Label=0
+    "Deliverance was importantly delayed",  # Label=0
+    "Rescue be significantly delayed",  # Label=0
+    "Delivery was importantly hold up",  # Label=0
+    "Delivery make up importantly delayed",  # Label=0
+    "Delivery was importantly detain",  # Label=0
+    "Delivery represent significantly check",  # Label=0
+    "Delivery exist significantly detain",  # Label=0
+    "Bringing was importantly delayed",  # Label=0
+    "Rescue was significantly delay",  # Label=0
+    "Delivery be significantly retard",  # Label=0
+    "Pitch was significantly hold up",  # Label=0
+    "Livery equal significantly delayed",  # Label=0
+    "Delivery be importantly delayed",  # Label=0
+    "Delivery comprise significantly hold up",  # Label=0
+    "Delivery equal importantly delayed",  # Label=0
+    "Delivery embody significantly delay",  # Label=0
+    "Saving constitute significantly delayed",  # Label=0
+    "The product does not meet expectations",  # Label=0
+    "The product do not meet expectation",  # Label=0
+    "The product do not meet arithmetic mean",  # Label=0
+    "The cartesian product does not come across expectations",  # Label=0
+    "The product does non meet expected value",  # Label=0
+    "The product do non meet expectations",  # Label=0
+    "The product does not forgather outlook",  # Label=0
+    "The merchandise does not meet prospect",  # Label=0
+    "The product manage not meet outlook",  # Label=0
+    "The product does not fulfill expectation",  # Label=0
+    "The cartesian product do not meet expectations",  # Label=0
+    "The product does non conform to expectations",  # Label=0
+    "The ware does not touch expectations",  # Label=0
+    "The mathematical product does non meet expectations",  # Label=0
+    "The ware does not play expectations",  # Label=0
+    "The product do not foregather expectations",  # Label=0
+    "The product coif not meet expectation",  # Label=0
+    "The merchandise does not cope with expectations",  # Label=0
+    "The product serve not meet prospect",  # Label=0
+    "The production does not meet expectation",  # Label=0
+    "The product does non run into expectations",  # Label=0
+    "The product does not run into expectation",  # Label=0
+    "The product does non meet expectation",  # Label=0
+    "The app had many errors",  # Label=0
+    "The app had many computer error",  # Label=0
+    "The app make many errors",  # Label=0
+    "The app had many errors",  # Label=0
+    "The app had many error",  # Label=0
+    "The app have many fault",  # Label=0
+    "The app let many errors",  # Label=0
+    "The app sustain many errors",  # Label=0
+    "The app had many wrongdoing",  # Label=0
+    "The app have many wrongdoing",  # Label=0
+    "The app accept many erroneousness",  # Label=0
+    "The app have many errors",  # Label=0
+    "The app give many errors",  # Label=0
+    "The app have many error",  # Label=0
+    "The app deliver many wrongdoing",  # Label=0
+    "The service was very poor",  # Label=0
+    "The service constitute real poor",  # Label=0
+    "The religious service was very wretched",  # Label=0
+    "The service exist very miserable",  # Label=0
+    "The serve was real poor",  # Label=0
+    "The service be very pathetic",  # Label=0
+    "The service be very wretched",  # Label=0
+    "The service be very pitiful",  # Label=0
+    "The help be very poor",  # Label=0
+    "The service be very misfortunate",  # Label=0
+    "The service represent rattling poor",  # Label=0
+    "The service of process represent very poor",  # Label=0
+    "The servicing be very poor",  # Label=0
+    "The table service was really poor",  # Label=0
+    "The service was rattling wretched",  # Label=0
+    "The inspection and repair be very poor",  # Label=0
+    "The service embody very short",  # Label=0
+    "The service constitute very miserable",  # Label=0
+    "The service make up very pitiful",  # Label=0
+    "The service was rattling piteous",  # Label=0
+    "The service equal really poor",  # Label=0
+    "The serve be very poor",  # Label=0
+    "The service be rattling poor",  # Label=0
+    "The avail was very miserable",  # Label=0
+]
+
+labels = [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+]
