@@ -91,11 +91,15 @@ print(predict("Αυτό είναι υπέροχο!"))
 # Plots
 plt.plot(history.history["loss"], label="Train Loss")
 plt.plot(history.history["val_loss"], label="Val Loss")
-plt.legend(); plt.show()
+plt.legend()
+plt.savefig("SentimentClasif_loss_plot.png")
+plt.show()
 
 plt.plot(history.history["accuracy"], label="Train Acc")
 plt.plot(history.history["val_accuracy"], label="Val Acc")
-plt.legend(); plt.show()
+plt.legend()
+plt.savefig("SentimentClasif_acc_plot.png")
+plt.show()
 
 
 # -------------------------------------------------------------------------
@@ -116,3 +120,29 @@ for text in examples:
     probs = model.predict([ids, mask])
     pred_label = label_map[int(tf.argmax(probs, axis=1).numpy()[0])]
     print(f"Text: {text}\nPredicted sentiment: {pred_label}\n")
+
+#A visual “report” or “annotation” of the texts themselves with the predicted sentiment, almost like a labeled screenshot or card for each text showing its predicted emotion.
+
+# Select some texts from validation set
+texts_to_show = val_texts[:10]
+labels_true = val_labels[:10]
+
+# Predict sentiments
+pred_labels = []
+for text in texts_to_show:
+    ids, mask = encode([text])
+    probs = model.predict([ids, masks])
+    pred_labels.append(label_map[int(np.argmax(probs, axis=1)[0])])
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10, len(texts_to_show) * 1.2))
+ax.axis('off')  # hide axes
+
+# Display texts with predicted sentiment
+for i, (text, pred) in enumerate(zip(texts_to_show, pred_labels)):
+    color = 'green' if pred == 'Positive' else 'red' if pred == 'Negative' else 'gray'
+    ax.text(0, len(texts_to_show) - i - 0.5, f"{text} --> {pred}", fontsize=12, color=color, wrap=True)
+
+plt.tight_layout()
+plt.savefig("SentimentClasif_val_texts_predictions.png", dpi=300)
+plt.show()

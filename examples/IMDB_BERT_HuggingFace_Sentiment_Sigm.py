@@ -104,11 +104,19 @@ print(predict("I did not like this movie at all."))
 # Plots
 plt.plot(history.history["loss"], label="Train Loss")
 plt.plot(history.history["val_loss"], label="Val Loss")
-plt.xlabel("Epochs"); plt.ylabel("Loss"); plt.legend(); plt.show()
+plt.xlabel("Epochs")
+plt.ylabel("Loss")
+plt.legend()
+plt.savefig("IMDB_loss_plot.png")
+plt.show()
 
 plt.plot(history.history["accuracy"], label="Train Acc")
 plt.plot(history.history["val_accuracy"], label="Val Acc")
-plt.xlabel("Epochs"); plt.ylabel("Accuracy"); plt.legend(); plt.show()
+plt.xlabel("Epochs")
+plt.ylabel("Accuracy")
+plt.legend()
+plt.savefig("IMDB_accuracy_plot.png")
+plt.show()
 
 # -------------------------------------------------------------------------
 # Predict emotions on validation set
@@ -122,3 +130,29 @@ for i, ((ids, masks), label) in enumerate(val_ds.take(10)):  # take first 10 sam
     for t, p in zip(true_labels, pred_labels):
         print(f"True: {t}  -->  Predicted: {p}")
     print()
+
+
+# -------------------------------------------------------------------------
+# Create a visualization of validation texts with predicted sentiment
+texts_to_show = val_texts[:10]      # first 10 texts
+labels_true = val_labels[:10]
+
+# Predict sentiments
+pred_labels = []
+for text in texts_to_show:
+    ids, mask = encode([text])
+    probs = model.predict([ids, mask])
+    pred_labels.append("Positive" if probs[0][0] >= 0.5 else "Negative")
+
+# Create figure
+fig, ax = plt.subplots(figsize=(12, len(texts_to_show) * 1.2))
+ax.axis('off')  # hide axes
+
+# Display texts with predicted sentiment
+for i, (text, pred) in enumerate(zip(texts_to_show, pred_labels)):
+    color = 'green' if pred == 'Positive' else 'red'
+    ax.text(0, len(texts_to_show) - i - 0.5, f"{text} --> {pred}", fontsize=10, color=color, wrap=True)
+
+plt.tight_layout()
+plt.savefig("IMDB_validation_texts_predictions.png", dpi=300)
+plt.show()
