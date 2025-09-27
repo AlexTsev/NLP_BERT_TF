@@ -107,7 +107,7 @@ plt.plot(history.history["val_loss"], label="Val Loss")
 plt.xlabel("Epochs")
 plt.ylabel("Loss")
 plt.legend()
-plt.savefig("IMDB_loss_plot.png")
+plt.savefig("../IMDB_loss_plot.png")
 plt.show()
 
 plt.plot(history.history["accuracy"], label="Train Acc")
@@ -115,7 +115,7 @@ plt.plot(history.history["val_accuracy"], label="Val Acc")
 plt.xlabel("Epochs")
 plt.ylabel("Accuracy")
 plt.legend()
-plt.savefig("IMDB_accuracy_plot.png")
+plt.savefig("../IMDB_accuracy_plot.png")
 plt.show()
 
 # -------------------------------------------------------------------------
@@ -134,25 +134,25 @@ for i, ((ids, masks), label) in enumerate(val_ds.take(10)):  # take first 10 sam
 
 # -------------------------------------------------------------------------
 # Create a visualization of validation texts with predicted sentiment
-texts_to_show = val_texts[:10]      # first 10 texts
-labels_true = val_labels[:10]
+texts_to_show = val_texts[:10]
 
-# Predict sentiments
 pred_labels = []
 for text in texts_to_show:
     ids, mask = encode([text])
-    probs = model.predict([ids, mask])
-    pred_labels.append("Positive" if probs[0][0] >= 0.5 else "Negative")
+    prob = model.predict([ids, mask])[0][0]
+    pred_labels.append("Positive" if prob >= 0.5 else "Negative")
 
 # Create figure
-fig, ax = plt.subplots(figsize=(12, len(texts_to_show) * 1.2))
-ax.axis('off')  # hide axes
+fig, ax = plt.subplots(figsize=(12, len(texts_to_show) * 1.5))
+ax.axis('off')
 
-# Display texts with predicted sentiment
-for i, (text, pred) in enumerate(zip(texts_to_show, pred_labels)):
+# Dynamic y positions (0 to 1 in axes coordinates)
+y_positions = np.linspace(0.9, 0.1, len(texts_to_show))
+
+for y, text, pred in zip(y_positions, texts_to_show, pred_labels):
     color = 'green' if pred == 'Positive' else 'red'
-    ax.text(0, len(texts_to_show) - i - 0.5, f"{text} --> {pred}", fontsize=10, color=color, wrap=True)
+    ax.text(0, y, f"{text} --> {pred}", fontsize=10, color=color, wrap=True, transform=ax.transAxes)
 
 plt.tight_layout()
-plt.savefig("IMDB_validation_texts_predictions.png", dpi=300)
+plt.savefig("../IMDB_validation_texts_predictions.png", dpi=300)
 plt.show()
